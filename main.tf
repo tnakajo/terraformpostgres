@@ -3,7 +3,8 @@
 ##############################################################################
 
 provider "ibm" {
-  ibmcloud_api_key = var.ibmcloud_api_key
+  #ibmcloud_api_key = var.ibmcloud_api_key
+  ibmcloud_api_key = "s3KZ81oni7D5peZ8YXevfqtuxCTjX_hNVBK6oWPAwLiC"
   region = var.ibm_region
   generation = 2
   ibmcloud_timeout = 60
@@ -12,7 +13,8 @@ provider "ibm" {
 provider "ibm" {
   alias = "replica_region"
   region = var.replica_region
-  ibmcloud_api_key = var.ibmcloud_api_key
+  #ibmcloud_api_key = var.ibmcloud_api_key
+  ibmcloud_api_key = "s3KZ81oni7D5peZ8YXevfqtuxCTjX_hNVBK6oWPAwLiC"
   generation = 2
   ibmcloud_timeout = 60
 }
