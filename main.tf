@@ -50,16 +50,16 @@ resource "ibm_database" "psql" {
 # PostgreSQL Replica
 ##############################################################################
 resource "ibm_database" "psql_replica" {
-count = var.replica_enabled ? 1 : 0
-name = "${var.unique_id}-s1"
-plan = "standard"
-location = var.replica_region
-service = "databases-for-postgresql"
-resource_group_id = data.ibm_resource_group.group.id
-service_endpoints = var.service_endpoint
-members_memory_allocation_mb = var.memory_allocation_mb
-members_disk_allocation_mb = var.disk_allocation_mb
-remote_leader_id = ibm_database.psql.id
+  count = var.replica_enabled ? 1 : 0
+  name = "${var.unique_id}-s1"
+  plan = "standard"
+  location = var.replica_region
+  service = "databases-for-postgresql"
+  resource_group_id = data.ibm_resource_group.group.id
+  service_endpoints = var.service_endpoint
+  members_memory_allocation_mb = var.memory_allocation_mb
+  members_disk_allocation_mb = var.disk_allocation_mb
+  remote_leader_id = ibm_database.psql.id
 }
 
 ##############################################################################
